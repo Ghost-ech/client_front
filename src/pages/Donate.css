@@ -1,0 +1,241 @@
+.donate-section {
+  padding: 40px 0 80px;
+  background: #f8fafc;
+}
+
+.donate-grid {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 40px;
+}
+
+.donate-form-container {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.donate-progress {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.donate-progress::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e2e8f0;
+  z-index: 1;
+}
+
+.progress-step {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  background: white;
+  padding: 0 15px;
+}
+
+.progress-step span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #64748b;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.progress-step.active span {
+  background: linear-gradient(135deg, var(--red), var(--orange));
+  color: white;
+}
+
+.progress-step label {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.progress-step.active label {
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.step-content h3 {
+  margin-bottom: 24px;
+  font-size: 20px;
+}
+
+.amount-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.amount-btn {
+  padding: 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.amount-btn:hover {
+  border-color: var(--orange);
+}
+
+.amount-btn.selected {
+  background: linear-gradient(135deg, var(--red), var(--orange));
+  color: white;
+  border-color: transparent;
+}
+
+.custom-amount input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.payment-btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.payment-btn.selected {
+  border-color: var(--blue);
+  background: rgba(17,138,178,0.05);
+}
+
+.payment-btn div {
+  flex: 1;
+}
+
+.payment-btn strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.payment-btn small {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.phone-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.phone-input span {
+  padding: 12px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.phone-input input {
+  flex: 1;
+}
+
+.info-box {
+  background: #f0fdf4;
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.info-box svg {
+  font-size: 24px;
+  color: var(--green);
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.donate-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.info-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.info-card svg {
+  font-size: 32px;
+  color: var(--red);
+  margin-bottom: 16px;
+}
+
+.info-card ul {
+  margin-top: 12px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.info-card li {
+  padding: 6px 0;
+  color: #475569;
+}
+
+.success-card {
+  text-align: center;
+  padding: 60px;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.success-icon {
+  font-size: 64px;
+  color: var(--green);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .donate-grid {
+    grid-template-columns: 1fr;
+  }
+  .amount-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

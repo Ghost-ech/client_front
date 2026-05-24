@@ -1,0 +1,279 @@
+/* src/pages/admin/AdminLogin.css */
+
+/* ── Variables logo ── */
+:root {
+  --ld-red:    #E63946;
+  --ld-green:  #4CAF50;
+  --ld-orange: #F4A261;
+  --ld-blue:   #2196F3;
+  --ld-purple: #9C27B0;
+}
+
+/* ── Layout ── */
+.login-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* ── Panneau gauche ── */
+.login-left {
+  background: linear-gradient(160deg, var(--mint-surface, #e8f5e9) 0%, var(--mint-surface-deep, #c8e6c9) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Barre 5 couleurs tout en haut du panneau gauche */
+.login-color-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--ld-red)    0%,   var(--ld-red)    20%,
+    var(--ld-green)  20%,  var(--ld-green)  40%,
+    var(--ld-orange) 40%,  var(--ld-orange) 60%,
+    var(--ld-blue)   60%,  var(--ld-blue)   80%,
+    var(--ld-purple) 80%,  var(--ld-purple) 100%
+  );
+}
+
+/* Contenu brand */
+.login-brand {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  color: var(--mint-text, #1b5e20);
+}
+
+/* Vrai logo dans un cercle blanc */
+.login-logo-wrap {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 0 auto 24px;
+  box-shadow: 0 0 0 6px rgba(76, 175, 80, 0.18),
+              0 8px 32px rgba(27, 94, 32, 0.15);
+  overflow: hidden;
+}
+
+.login-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.login-brand h1 {
+  font-size: 2.6rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.login-tagline {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--mint-text-muted, #4a7a4e);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.login-desc {
+  color: var(--mint-text-soft, #2e7d32);
+  font-size: 14px;
+  max-width: 300px;
+  line-height: 1.75;
+  margin: 0 auto 32px;
+}
+
+/* Pastilles 5 couleurs du logo */
+.login-color-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.85;
+}
+
+.dot-red    { background: var(--ld-red); }
+.dot-green  { background: var(--ld-green); }
+.dot-orange { background: var(--ld-orange); }
+.dot-blue   { background: var(--ld-blue); }
+.dot-purple { background: var(--ld-purple); }
+
+/* Cercles décoratifs fond */
+.login-deco { position: absolute; inset: 0; pointer-events: none; }
+
+.deco-circle { position: absolute; border-radius: 50%; }
+
+.c1 {
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(230, 57, 70, 0.12), transparent);
+  top: -120px; left: -120px;
+}
+.c2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(33, 150, 243, 0.1), transparent);
+  bottom: -160px; right: -160px;
+}
+.c3 {
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(156, 39, 176, 0.08), transparent);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ── Panneau droit ── */
+.login-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: #f8fafc;
+}
+
+.login-box {
+  background: white;
+  border-radius: 20px;
+  padding: 50px 44px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Icône cadenas — dégradé rouge→orange du logo */
+.login-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--ld-red), var(--ld-orange));
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.35);
+}
+
+.login-box h2 { font-size: 1.8rem; margin-bottom: 8px; color: #1a1a2e; }
+.login-box > p { color: #6b7280; margin-bottom: 32px; font-size: 14px; }
+
+/* Groupes de champ */
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px 12px 44px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  color: #1a1a2e;
+}
+
+.form-group input:focus {
+  border-color: var(--ld-blue);
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.12);
+}
+
+.input-icon-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  color: #9ca3af;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.pwd-toggle {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px;
+  transition: color 0.2s;
+}
+.pwd-toggle:hover { color: #374151; }
+
+/* Bouton submit */
+.login-submit {
+  width: 100%;
+  justify-content: center;
+  margin-top: 8px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--ld-red), var(--ld-orange));
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.35);
+}
+
+.login-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.5);
+}
+
+.login-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Hint identifiants */
+.login-hint {
+  margin-top: 24px;
+  padding: 14px 16px;
+  background: rgba(33, 150, 243, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(33, 150, 243, 0.15);
+}
+
+.login-hint p { font-size: 12px; color: #6b7280; margin-bottom: 4px; }
+.login-hint p:last-child { margin-bottom: 0; }
+.login-hint strong { color: var(--ld-blue); }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .login-page { grid-template-columns: 1fr; }
+  .login-left { display: none; }
+}

@@ -1,0 +1,32 @@
+# robots.txt — www.littledream.cm
+# Association Little Dream
+
+User-agent: *
+Allow: /
+
+# Bloquer l'espace d'administration
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/*
+
+# Bloquer les endpoints API (pas de contenu HTML utile pour les moteurs)
+Disallow: /api/
+Disallow: /uploads/
+
+# Autoriser explicitement les ressources statiques utiles
+Allow: /logo.jpg
+Allow: /og-image.jpg
+Allow: /apple-touch-icon.jpg
+Allow: /manifest.webmanifest
+
+# Bots IA — on autorise (visibilité). Décommentez pour bloquer.
+# User-agent: GPTBot
+# Disallow: /
+# User-agent: ClaudeBot
+# Disallow: /
+# User-agent: CCBot
+# Disallow: /
+# User-agent: Google-Extended
+# Disallow: /
+
+Sitemap: https://www.littledream.cm/sitemap.xml

@@ -1,0 +1,194 @@
+/* src/components/Navbar.css */
+
+/* ── Barre 5 couleurs du logo (fixée en tout premier) ── */
+.nav-color-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #E63946 0%,   #E63946 20%,   /* rouge   */
+    #4CAF50 20%,  #4CAF50 40%,   /* vert    */
+    #F4A261 40%,  #F4A261 60%,   /* orange  */
+    #2196F3 60%,  #2196F3 80%,   /* bleu    */
+    #9C27B0 80%,  #9C27B0 100%   /* violet  */
+  );
+}
+
+/* ── Navbar ── */
+.navbar {
+  position: fixed;
+  top: 3px; /* juste en dessous de la barre */
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 14px 0;
+  transition: all 0.35s ease;
+  background: transparent;
+}
+
+.navbar.scrolled {
+  background: rgba(46, 125, 50, 0.97);
+  backdrop-filter: blur(12px);
+  padding: 10px 0;
+  box-shadow: 0 2px 20px rgba(27, 94, 32, 0.25);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Logo ── */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+/* Cercle blanc qui isole le logo de l'arrière-plan sombre */
+.logo-img-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-little {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.logo-dream {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+/* ── Liens ── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.25s;
+  text-decoration: none;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: white;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Bouton Don ── */
+.nav-donate-btn {
+  background: linear-gradient(135deg, #E63946, #F4A261) !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+  transition: all 0.25s !important;
+}
+
+.nav-donate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.55) !important;
+  background: linear-gradient(135deg, #E63946, #F4A261) !important;
+}
+
+/* ── Toggle mobile ── */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .nav-toggle { display: block; }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 280px;
+    background: var(--mint-surface, #e8f5e9);
+    flex-direction: column;
+    padding: 80px 30px 30px;
+    gap: 8px;
+    transition: right 0.35s ease;
+    box-shadow: -4px 0 30px rgba(27, 94, 32, 0.15);
+  }
+
+  .nav-links li a {
+    color: var(--mint-text-soft, #2e7d32) !important;
+  }
+
+  .nav-links li a:hover,
+  .nav-links li a.active {
+    color: var(--mint-text, #1b5e20) !important;
+    background: rgba(76, 175, 80, 0.15);
+  }
+
+  .nav-links.open { right: 0; }
+
+  .nav-links li { width: 100%; }
+
+  .nav-links li a {
+    display: block;
+    padding: 14px 18px;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+
+  .nav-donate-btn { text-align: center; justify-content: center; }
+}
