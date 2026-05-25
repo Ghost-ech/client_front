@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaFacebook, FaInstagram, FaWhatsapp, FaLinkedinIn } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaClock, FaFacebook, FaInstagram, FaWhatsapp, FaLinkedinIn } from 'react-icons/fa';
 import API from '../api';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 import './Contact.css';
@@ -43,10 +43,6 @@ export default function Contact() {
               <p>N'hésitez pas à nous contacter. Notre équipe vous répondra dans les 24 heures ouvrables.</p>
 
               <div className="contact-items">
-                <div className="contact-item">
-                  <div className="ci-icon"><FaMapMarkerAlt /></div>
-                  <div><strong>Adresse</strong><span>Douala, Cameroun</span></div>
-                </div>
                 <div className="contact-item">
                   <div className="ci-icon"><FaPhone /></div>
                   <div><strong>Téléphone</strong><span>+237 640 420 079 <br /> +237 673 356 881</span></div>

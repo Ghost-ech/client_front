@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   FaFacebook, FaInstagram, FaWhatsapp,
-  FaMapMarkerAlt, FaPhone, FaEnvelope, FaHeart,
+  FaPhone, FaEnvelope, FaHeart,
   FaLinkedin,
 } from 'react-icons/fa';
 import logoImg from '../assets/logo.jpeg';
@@ -72,10 +72,6 @@ export default function Footer() {
             <div className="footer-col footer-col--blue">
               <h4>Contact</h4>
               <ul className="contact-list">
-                <li>
-                  <span className="contact-icon contact-icon--green"><FaMapMarkerAlt /></span>
-                  <span>Douala, Cameroun</span>
-                </li>
                 <li>
                   <span className="contact-icon contact-icon--blue"><FaPhone /></span>
                   <span>+237 640 420 079<br />+237 673 356 881</span>
