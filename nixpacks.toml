@@ -2,7 +2,7 @@
 cmds = ["npm install"]
 
 [phases.build]
-cmds = ["./node_modules/.bin/vite build"]
+cmds = ["chmod +x ./node_modules/.bin/vite", "./node_modules/.bin/vite build"]
 
 [start]
 cmd = "npx serve dist -l 3000"
