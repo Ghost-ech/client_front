@@ -3,6 +3,10 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
+
+ARG APP_API_URL
+ENV APP_API_URL=$APP_API_URL
+
 RUN npm run build
 
 FROM nginx:alpine
