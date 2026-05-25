@@ -41,5 +41,5 @@
 .impact-desc { font-size: 13px; color: var(--gray); line-height: 1.5; }
 .impact-check { position: absolute; top: 14px; right: 14px; color: var(--green); }
 
-@media(max-width:900px){ .help-ways{grid-template-columns:1fr}; .forms-grid{grid-template-columns:1fr}; .impact-grid{grid-template-columns:1fr 1fr}; .partner-box{flex-direction:column;text-align:center}; }
-@media(max-width:600px){ .impact-grid{grid-template-columns:1fr}; }
+@media(max-width:900px){ .help-ways{grid-template-columns:1fr} .forms-grid{grid-template-columns:1fr} .impact-grid{grid-template-columns:1fr 1fr} .partner-box{flex-direction:column;text-align:center} }
+@media(max-width:600px){ .impact-grid{grid-template-columns:1fr} }

@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const API_BASE = import.meta.env.APP_API_URL || 'http://localhost:5000';
+
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  baseURL: `${API_BASE}/api`,
   headers: { 'Content-Type': 'application/json' }
 });
 
@@ -26,7 +28,7 @@ API.interceptors.response.use(
 
 export default API;
 
-export const IMAGE_BASE_URL = import.meta.env.VITE_IMAGE_BASE_URL || 'http://localhost:5000';
+export const IMAGE_BASE_URL = API_BASE;
 
 // Préfixe IMAGE_BASE_URL pour les chemins relatifs (uploads locaux),
 // laisse intactes les URLs absolues (http/https) et retourne null si vide.
