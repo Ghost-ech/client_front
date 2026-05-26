@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import API, { IMAGE_BASE_URL } from '../api';
+import API, { getImageUrl } from '../api';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 import './Gallery.css';
 
@@ -21,16 +21,8 @@ export default function Gallery() {
       .then(r => {
         let data = r.data.data || [];
         
-        // Ajouter l'URL complète pour les images locales
-        data = data.map(img => {
-          if (img.image_url && !img.image_url.startsWith('http')) {
-            return {
-              ...img,
-              image_url: `${IMAGE_BASE_URL}${img.image_url}`
-            };
-          }
-          return img;
-        });
+        // Normalise les URLs (force https si la page est en https)
+        data = data.map(img => ({ ...img, image_url: getImageUrl(img.image_url) }));
         
         setImages(data);
       })

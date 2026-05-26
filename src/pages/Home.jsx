@@ -280,7 +280,7 @@ function VolunteerSection() {
                 </div>
               ))}
             </div>
-            <Link to="/comment-aider#benevole" className="btn btn-blue">
+            <Link to="/benevole" className="btn btn-blue">
               <FaUsers /> Devenir bénévole
             </Link>
           </div>

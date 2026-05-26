@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHandHoldingHeart, FaEye, FaBullseye, FaUsers } from 'react-icons/fa';
-import API, { IMAGE_BASE_URL } from '../api';
+import API, { getImageUrl } from '../api';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 import './Mission.css';
 
@@ -32,11 +32,6 @@ export default function Mission() {
       .finally(() => setLoadingTeam(false));
   }, []);
 
-  const getImageUrl = (imageUrl) => {
-    if (!imageUrl) return null;
-    if (imageUrl.startsWith('http')) return imageUrl;
-    return `${IMAGE_BASE_URL}${imageUrl}`;
-  };
 
   return (
     <main>

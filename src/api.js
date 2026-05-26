@@ -30,10 +30,16 @@ export default API;
 
 export const IMAGE_BASE_URL = API_BASE;
 
-// Préfixe IMAGE_BASE_URL pour les chemins relatifs (uploads locaux),
-// laisse intactes les URLs absolues (http/https) et retourne null si vide.
+// Préfixe IMAGE_BASE_URL pour les chemins relatifs.
+// Force https sur les URLs absolues quand la page est servie en https,
+// pour éviter le mixed-content quand le backend renvoie http://.
 export const getImageUrl = (url) => {
   if (!url) return null;
-  if (url.startsWith('http')) return url;
+  if (url.startsWith('http')) {
+    if (typeof window !== 'undefined' && window.location.protocol === 'https:' && url.startsWith('http://')) {
+      return 'https://' + url.slice('http://'.length);
+    }
+    return url;
+  }
   return `${IMAGE_BASE_URL}${url}`;
 };

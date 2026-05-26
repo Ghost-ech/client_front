@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { FaPlus, FaEdit, FaTrash, FaEye, FaEyeSlash, FaUpload } from 'react-icons/fa';
-import API, { IMAGE_BASE_URL } from '../../api';
+import API, { getImageUrl } from '../../api';
 import './AdminDashboard.css';
 
 export default function AdminTeam() {
@@ -179,13 +179,7 @@ export default function AdminTeam() {
     }
   };
 
-  const getImageDisplay = (member) => {
-    if (member.image_url) {
-      if (member.image_url.startsWith('http')) return member.image_url;
-      return `${IMAGE_BASE_URL}${member.image_url}`;
-    }
-    return null;
-  };
+  const getImageDisplay = (member) => getImageUrl(member.image_url);
 
   return (
     <div className="admin-page">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { FaPlus, FaEdit, FaTrash, FaSearch, FaUpload } from 'react-icons/fa';
-import API, { IMAGE_BASE_URL } from '../../api';
+import API, { getImageUrl } from '../../api';
 import './AdminDashboard.css';
 
 const CATS = ['Education', 'Culture', 'Sport', 'Autre'];
@@ -108,12 +108,6 @@ export default function AdminActivities() {
       toast.success('Activité supprimée.');
       load();
     } catch { toast.error('Erreur lors de la suppression.'); }
-  };
-
-  const getImageUrl = (url) => {
-    if (!url) return null;
-    if (url.startsWith('http')) return url;
-    return `${IMAGE_BASE_URL}${url}`;
   };
 
   const filtered = items.filter(i =>

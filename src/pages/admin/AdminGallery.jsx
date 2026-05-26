@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { FaPlus, FaTrash, FaSearch, FaUpload, FaLink } from 'react-icons/fa';
-import API, { IMAGE_BASE_URL } from '../../api';
+import API, { getImageUrl } from '../../api';
 import './AdminDashboard.css';
 
 const CATEGORIES = ['Education', 'Culture', 'Sport', 'Events'];
@@ -20,16 +20,8 @@ export default function AdminGallery() {
     API.get('/gallery')
       .then(r => {
         let data = r.data.data || [];
-        // Ajouter l'URL complète pour l'affichage
-        data = data.map(img => {
-          if (img.image_url && !img.image_url.startsWith('http')) {
-            return {
-              ...img,
-              display_url: `${IMAGE_BASE_URL}${img.image_url}`
-            };
-          }
-          return { ...img, display_url: img.image_url };
-        });
+        // Ajouter l'URL complète pour l'affichage (force https si la page est en https)
+        data = data.map(img => ({ ...img, display_url: getImageUrl(img.image_url) }));
         setItems(data);
       })
       .catch(err => console.error('Erreur chargement:', err));

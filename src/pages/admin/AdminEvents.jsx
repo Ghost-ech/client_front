@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { FaPlus, FaEdit, FaTrash, FaSearch, FaCalendarAlt, FaMapMarkerAlt, FaUpload } from 'react-icons/fa';
-import API, { IMAGE_BASE_URL } from '../../api';
+import API, { getImageUrl } from '../../api';
 import './AdminDashboard.css';
 
 const EMPTY = { title: '', description: '', location: '', event_date: '', image_url: '', is_published: true };
@@ -116,12 +116,6 @@ export default function AdminEvents() {
     } catch {
       toast.error('Erreur.');
     }
-  };
-
-  const getImageUrl = (url) => {
-    if (!url) return null;
-    if (url.startsWith('http')) return url;
-    return `${IMAGE_BASE_URL}${url}`;
   };
 
   const filtered = items.filter(i => i.title?.toLowerCase().includes(search.toLowerCase()));
